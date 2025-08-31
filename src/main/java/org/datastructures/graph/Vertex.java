@@ -19,8 +19,12 @@ public class Vertex {
             return;
         }
 
-        message.append(" --> ");
         for (int i = 0; i < this.edges.size(); i++) {
+
+            if (i == 0) {
+                message.append(this.edges.get(i).getStart().value);
+                message.append(" --> ");
+            }
 
             message.append(this.edges.get(i).getEnd().value);
 

@@ -65,6 +65,12 @@ public class Graph {
         return null;
     }
 
+    public void print() {
+        for (Vertex v: this.vertices) {
+            v.print(isWeighted);
+        }
+    }
+
     public void removeEdge(Vertex vertex1, Vertex vertex2) {
         vertex1.removeEdge(vertex2);
     }
@@ -73,7 +79,16 @@ public class Graph {
         this.vertices.remove(vertex);
     }
 
+    public static void main(String[] args) {
+        Graph  busNetwork = new Graph(true, true);
+        Vertex elPepeV =  busNetwork.addVertex("Elpepe");
+        Vertex eteSechV = busNetwork.addVertex("EteSech");
 
+        busNetwork.addEdge(elPepeV, eteSechV, 10);
 
+        busNetwork.print();
+    }
 }
+
+
 
